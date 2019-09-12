@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+    <div class="page">
+        <div id="room">
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-9">
+                        <h1><i class="fas fa-hotel"></i>NEW ROOM</h1>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="create">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="room-no">Room No:</label>
+                            <input type="text" class="form-control" id="room-no">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="bed-type">Bed Type:</label>
+                            <select id="bed-type" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Single</option>
+                                <option>Double</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="bed-type">Status:</label>
+                            <select id="bed-type" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Active</option>
+                                <option>Deactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="adult">Adult:</label>
+                            <input type="number" class="form-control" id="adult">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="child">Child:</label>
+                            <input type="number" class="form-control" id="child">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="adult">Upload Photo:</label>
+                            <input type="file" class="form-control" id="photo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="price">Price:</label>
+                            <input type="number" class="form-control" id="price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Description:</label>
+                        <textarea class="form-control" id="desc" rows="5"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">Create</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+

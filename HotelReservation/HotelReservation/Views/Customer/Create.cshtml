@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+    <div class="page">
+        <div id="customer">
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <h1><i class="fas fa-user-tie"></i>NEW CUSTOMER</h1>
+                    </div>
+                </div>
+            </div>
+
+         
+
+            <div class="create">
+                <form>
+
+                    <div class="form-group">
+                        <label for="desc">First Name:</label>
+                        <input tyoe="text" class="form-control" id="name"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Last Name:</label>
+                        <input tyoe="text" class="form-control" id="surname"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="bed-type">Customer Type:</label>
+                        <select id="bed-type" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Adult</option>
+                            <option>Child</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">Create</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+

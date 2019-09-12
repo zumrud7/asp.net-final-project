@@ -1,0 +1,36 @@
+﻿@model Group
+@{
+    ViewBag.Title = "Edit";
+}
+
+    <div class="page">
+        <div id="customer">
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <h1><i class="fas fa-user-tag"></i>NEW USER ROLE</h1>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="create">
+                <form method="post">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name)
+                        @Html.TextBoxFor(m => m.Name, null, new { @class = "form-control" })
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">Create</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

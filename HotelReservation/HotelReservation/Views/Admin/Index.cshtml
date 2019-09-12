@@ -1,0 +1,69 @@
+﻿@model List<User>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="page">
+        <div id="customer">
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-9">
+                        <h1><i class="fas fa-user"></i>USER LIST</h1>
+                    </div>
+                    <div class="col-3 text-right">
+                        <a href="@Url.Action("create","admin")" class="btn btn-success">Create New User</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="customer-list">
+                <table class="table table-hover">
+                    <thead>
+                        <tr style="background-color:black">
+                            <th></th>
+                            <th>Full Name</th>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="icon">
+                                        <img src="~/Public/assets/images/image-gallery/user.png" alt="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h6>@item.FullName</h6>
+                                </td>
+                                <td>
+                                    <h6>@item.UserName</h6>
+                                </td>
+                                <td>
+                                    <h6>@item.Email</h6>
+                                </td>
+                                <td>
+                                    <h6>@item.Group.Name</h6>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("edit", new { id=item.Id})" class="btn btn-primary">Edit</a>
+                                    <a onclick="return confirm('Are you sure to delete @item.FullName?')" href="@Url.Action("delete", new { id=item.Id})" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+          
+        </div>
+    </div>
+
