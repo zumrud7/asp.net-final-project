@@ -1,4 +1,4 @@
-﻿
+﻿@model Customer
 @{
     ViewBag.Title = "Create";
 }
@@ -17,23 +17,19 @@
          
 
             <div class="create">
-                <form>
+                <form method="post">
 
                     <div class="form-group">
-                        <label for="desc">First Name:</label>
-                        <input tyoe="text" class="form-control" id="name"></input>
+                        @Html.LabelFor(m=>m.FirstName)
+                        @Html.TextBoxFor(m=>m.FirstName, null, new { @class="form-control"})
                     </div>
                     <div class="form-group">
-                        <label for="desc">Last Name:</label>
-                        <input tyoe="text" class="form-control" id="surname"></input>
+                        @Html.LabelFor(m => m.LastName)
+                        @Html.TextBoxFor(m => m.LastName, null, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label for="bed-type">Customer Type:</label>
-                        <select id="bed-type" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Adult</option>
-                            <option>Child</option>
-                        </select>
+                        @Html.LabelFor(m => m.CustomerTypeId)
+                        @Html.DropDownListFor(m=>m.CustomerTypeId, new SelectList(ViewBag.CustomerTypes,"id", "name"), new { @class = "form-control"})
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">

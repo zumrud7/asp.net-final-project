@@ -156,6 +156,10 @@
     <Compile Include="Migrations\201909120723198_PriceAddedtoMenu.Designer.cs">
       <DependentUpon>201909120723198_PriceAddedtoMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.cs" />
+    <Compile Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.Designer.cs">
+      <DependentUpon>201909121445016_MenuFKCategoryIdCorrected.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BedType.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -417,6 +421,8 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Group\Edit.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Menu\Edit.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909120723198_PriceAddedtoMenu.resx">
       <DependentUpon>201909120723198_PriceAddedtoMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.resx">
+      <DependentUpon>201909121445016_MenuFKCategoryIdCorrected.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

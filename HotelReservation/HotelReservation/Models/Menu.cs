@@ -18,7 +18,7 @@ namespace HotelReservation.Models
 
         public bool Status { get; set; }
         [Display(Name="Category")]
-        public int CatgeoryId { get; set; }
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
 
         public ICollection<Booking> Bookings { get; set; }

@@ -47,8 +47,8 @@
                                 <h6>@item.CustomerType.Name</h6>
                             </td>
                             <td style="width:20%">
-                                <button type="button" class="btn btn-primary">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <a href="@Url.Action("edit", new { id=item.Id})" style="width:90px;" class="btn btn-primary mb-1">Edit</a>
+                                <a onclick="return confirm('Are you sure to delete @item.FirstName @item.LastName?')"href="@Url.Action("delete", new { id=item.Id})" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     }

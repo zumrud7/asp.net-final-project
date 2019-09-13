@@ -43,5 +43,48 @@ namespace HotelReservation.Controllers
             }
             return View(menu);
         }
+        
+        public ActionResult Edit(int id)
+        {
+            Menu menu = _context.Menus.Find(id);
+
+            if(menu == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Categories = _context.Categories.ToList();
+
+            return View(menu);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Menu menu)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(menu).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+
+                return RedirectToAction("index");
+            }
+            ViewBag.Categories = _context.Categories.ToList();
+
+            return View(menu);
+
+        }
+
+     
+        public ActionResult Delete(int id)
+        {
+            Menu menu = _context.Menus.Find(id);
+
+            if(menu == null)
+            {
+                return HttpNotFound();
+            }
+            _context.Menus.Remove(menu);
+            _context.SaveChanges();
+            return RedirectToAction("index");
+        }
     }
 }

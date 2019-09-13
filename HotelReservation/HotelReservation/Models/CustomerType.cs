@@ -11,6 +11,7 @@ namespace HotelReservation.Models
         public int Id { get; set; }
 
         [Required,MaxLength(50)]
+        [Display]
         public string Name { get; set; }
 
         public ICollection<Customer> Customers { get; set; }
