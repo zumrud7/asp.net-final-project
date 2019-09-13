@@ -169,3 +169,4 @@ C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\ob
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.dll
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.pdb
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.MenuFKCategoryIdCorrected.resources
+C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.PhotoAddedToRoom.resources

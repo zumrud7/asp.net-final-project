@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FileManager.cs" />
     <Compile Include="Migrations\201909100508154_Init.cs" />
     <Compile Include="Migrations\201909100508154_Init.Designer.cs">
       <DependentUpon>201909100508154_Init.cs</DependentUpon>
@@ -159,6 +160,10 @@
     <Compile Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.cs" />
     <Compile Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.Designer.cs">
       <DependentUpon>201909121445016_MenuFKCategoryIdCorrected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909131110294_PhotoAddedToRoom.cs" />
+    <Compile Include="Migrations\201909131110294_PhotoAddedToRoom.Designer.cs">
+      <DependentUpon>201909131110294_PhotoAddedToRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BedType.cs" />
@@ -423,6 +428,7 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Menu\Edit.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -455,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909121445016_MenuFKCategoryIdCorrected.resx">
       <DependentUpon>201909121445016_MenuFKCategoryIdCorrected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909131110294_PhotoAddedToRoom.resx">
+      <DependentUpon>201909131110294_PhotoAddedToRoom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

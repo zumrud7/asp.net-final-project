@@ -30,8 +30,11 @@ namespace HotelReservation.Models
         public BedType BedType { get; set; }
         [Required,MaxLength(500)]
         public string Description { get; set; }
+
+        public string Photo { get; set; }
+
         [NotMapped]
-        public HttpPostedFileBase Photo { get; set; }
+        public HttpPostedFileBase File { get; set; }
 
         public ICollection<Booking> Bookings { get; set; }
 

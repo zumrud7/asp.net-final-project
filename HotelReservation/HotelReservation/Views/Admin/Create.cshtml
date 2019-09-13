@@ -20,23 +20,28 @@
                     <div class="form-group">
                         @Html.LabelFor(m => m.FullName)
                         @Html.TextBoxFor(m => m.FullName, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.UserName)
                         @Html.TextBoxFor(m => m.UserName, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Email)
                         @Html.TextBoxFor(m => m.Email, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password)
                         @Html.TextBoxFor(m => m.Password, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.GroupId)
-                        @Html.DropDownListFor(m=>m.GroupId, new SelectList(ViewBag.Groups, "Id", "name"), new { @class="form-control"})
-                       
+                        @Html.DropDownListFor(m => m.GroupId, new SelectList(ViewBag.Groups, "Id", "name"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GroupId, "", new { @class = "text-danger" })
+
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">

@@ -1,4 +1,4 @@
-﻿
+﻿@model Room
 @{
     ViewBag.Title = "Create";
 }
@@ -18,52 +18,47 @@
 
 
             <div class="create">
-                <form>
+                <form method="post" enctype="multipart/form-data">
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="room-no">Room No:</label>
-                            <input type="text" class="form-control" id="room-no">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Number)
+                            @Html.TextBoxFor(m => m.Number, null, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Number, "", new { @class = "text-danger" })
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="bed-type">Bed Type:</label>
-                            <select id="bed-type" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>Single</option>
-                                <option>Double</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="bed-type">Status:</label>
-                            <select id="bed-type" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>Active</option>
-                                <option>Deactive</option>
-                            </select>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.BedTypeId)
+                            @Html.DropDownListFor(m => m.BedTypeId, new SelectList(ViewBag.BedTypes, "id", "name"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.BedTypeId, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="adult">Adult:</label>
-                            <input type="number" class="form-control" id="adult">
+                            @Html.LabelFor(m => m.AdultCapacity)
+                            @Html.TextBoxFor(m => m.AdultCapacity, null, new { @class = "form-control", @type = "number" })
+                            @Html.ValidationMessageFor(m => m.AdultCapacity, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="child">Child:</label>
-                            <input type="number" class="form-control" id="child">
+                            @Html.LabelFor(m => m.ChildCapacity)
+                            @Html.TextBoxFor(m => m.ChildCapacity, null, new { @class = "form-control", @type = "number" })
+                            @Html.ValidationMessageFor(m => m.ChildCapacity, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="adult">Upload Photo:</label>
-                            <input type="file" class="form-control" id="photo">
+                            @Html.LabelFor(m => m.File)
+                            @Html.TextBoxFor(m => m.File, null, new { @class = "form-control", @type = "file" })
+                            @Html.ValidationMessageFor(m => m.File, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="price">Price:</label>
-                            <input type="number" class="form-control" id="price">
+                            @Html.LabelFor(m => m.Price)
+                            @Html.TextBoxFor(m => m.Price, null, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="desc">Description:</label>
-                        <textarea class="form-control" id="desc" rows="5"></textarea>
+                        @Html.LabelFor(m => m.Description)
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">

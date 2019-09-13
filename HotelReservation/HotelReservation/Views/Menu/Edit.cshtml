@@ -21,21 +21,25 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.Name)
                     @Html.TextBoxFor(m => m.Name, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.Count)
                     @Html.TextBoxFor(m => m.Count, null, new { @class = "form-control", @type = "number" })
+                    @Html.ValidationMessageFor(m => m.Count, "", new { @class = "text-danger" })
 
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Price)
                     @Html.TextBoxFor(m => m.Price, null, new { @class = "form-control", @type = "number" })
+                    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
 
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.CategoryId)
                     @Html.DropDownListFor(m => m.CategoryId, new SelectList(ViewBag.Categories, "Id", "name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
 
                 </div>
 

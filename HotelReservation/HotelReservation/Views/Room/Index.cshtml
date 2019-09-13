@@ -24,8 +24,10 @@
                     <tr style="background-color:black">
                         <th>Photo</th>
                         <th>Description</th>
-                        <th>Room No:</th>
-                        <th>Bed Type</th>
+                        <th>Room</th>
+                        <th>Adult</th>
+                        <th>Child</th>
+                        <th>Bed</th>
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
@@ -33,34 +35,36 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td style="width:20%">
-                                <div class="photo">
-                                    <img src="@item.Photo" alt="">
-                                </div>
-                            </td>
-                            <td style="width:35%">
-                                @item.Description
-                            </td>
-                            <td style="width:12%">
-                                <p>Room No:</p>
-                                <h6>@item.Number</h6>
-                            </td>
-                            <td style="width:10%">
-                                <div class="icon">
-                                    <img src="~/Public/assets/images/image-gallery/icon-bed-0.jpg" alt="">
-                                </div>
-                            </td>
-                            <td style="width:10%">
-                                <p>Price:</p>
-                                <h6 class="price">@item.Price</h6>
-                            </td>
-                            <td style="width:13%">
-                                <a href="button" class="btn btn-primary">Edit</a>
-                                <a href="button" class="btn btn-danger">Delete</a>
-                                <a href="button" class="btn btn-status active">@item.Status</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <div class="photo">
+                                <img src="~/Upload/@item.Photo" alt="">
+                            </div>
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+                        <td>
+                            <h6>@item.Number</h6>
+                        </td>
+                        <td>
+                            <h6>@item.AdultCapacity</h6>
+                        </td>
+                        <td>
+                            <h6>@item.ChildCapacity</h6>
+                        </td>
+                        <td>
+                            <h6>@item.BedType.Name</h6>
+                        </td>
+                        <td>
+                            <h6 class="price p-1" style="border-radius:5px">@item.Price $</h6>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("edit", new { id=item.Id})" class="btn btn-primary mb-1" style="width:90px;">Edit</a>
+                            <a onclick="return confirm('Are you sure to delete Room No: @item.Number?')" href="@Url.Action("delete", new { id=item.Id})" class="btn btn-danger">Delete</a>
+                            <button type="button" class="btn btn-status active">Active</button>
+                        </td>
+                    </tr>
                     }
 
 
