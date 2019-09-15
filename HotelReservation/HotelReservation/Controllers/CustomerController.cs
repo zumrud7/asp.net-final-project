@@ -18,21 +18,37 @@ namespace HotelReservation.Controllers
         {
             _context = new HotelReservationContext();
         }
+
+
+        //Index page view
         public ActionResult Index()
         {
+
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var list = _context.Customers.Include("CustomerType").OrderByDescending(c => c.Id).ToList();
             return View(list);
         }
 
+
+        //Create page view
         public ActionResult Create()
         {
             ViewBag.CustomerTypes = _context.CustomerTypes.ToList();
             return View();
         }
 
+
+        //Create page submit form
         [HttpPost]
         public ActionResult Create(Customer cst)
         {
+
+            //Create customer is data is valid
             if (ModelState.IsValid)
             {
                 _context.Customers.Add(cst);
@@ -42,6 +58,8 @@ namespace HotelReservation.Controllers
             return View(cst);
         }
 
+
+        //Edit page view
         public ActionResult Edit(int id)
         {
             Customer cst = _context.Customers.Find(id);
@@ -55,9 +73,13 @@ namespace HotelReservation.Controllers
             return View(cst);
         }
 
+
+        //Edit page submit form
         [HttpPost]
         public ActionResult Edit(Customer cst)
         {
+
+            //Update customer is data is valid
             if (ModelState.IsValid)
             {
                 _context.Entry(cst).State = System.Data.Entity.EntityState.Modified;
@@ -71,6 +93,8 @@ namespace HotelReservation.Controllers
             return View(cst);
         }
 
+
+        //Delete selected customer
         public ActionResult Delete(int id)
         {
             Customer cst = _context.Customers.Find(id);

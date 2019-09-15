@@ -18,22 +18,36 @@ namespace HotelReservation.Controllers
         {
             _context = new HotelReservationContext();
         }
+
+
+        //Index page view
         public ActionResult Index()
         {
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var list = _context.Groups.OrderByDescending(g => g.Id).ToList();
             return View(list);
         }
 
+
+        //Create page view
         public ActionResult Create()
         {
             ViewBag.Groups = _context.Groups.ToList();
             return View();
         }
 
+
+        //Create page submit form
         [HttpPost]
         public ActionResult Create(Group grp)
         {
 
+            //Create role if data is valid
             if (ModelState.IsValid)
             {
                 _context.Groups.Add(grp);
@@ -45,6 +59,8 @@ namespace HotelReservation.Controllers
             return View(grp);
         }
 
+
+        //Edit page view
         public ActionResult Edit(int id)
         {
             Group grp = _context.Groups.Find(id);
@@ -58,9 +74,14 @@ namespace HotelReservation.Controllers
             return View(grp);
         }
 
+
+
+        //Edit page submit form
         [HttpPost]
         public ActionResult Edit(Group grp)
         {
+
+            //Update role is data is valid
             if (ModelState.IsValid)
             {
                 _context.Entry(grp).State = System.Data.Entity.EntityState.Modified;
@@ -74,6 +95,8 @@ namespace HotelReservation.Controllers
         }
 
        
+
+        //Delete selected role
         public ActionResult Delete(int id)
         {
             Group grp = _context.Groups.Find(id);

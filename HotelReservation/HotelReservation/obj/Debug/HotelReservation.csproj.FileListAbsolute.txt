@@ -158,7 +158,6 @@ C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\bi
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\bin\Newtonsoft.Json.xml
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\bin\Antlr3.Runtime.pdb
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.Init.resources
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.BedtypePhotoAdded.resources
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.ModelDisplayNameUpdate.resources
@@ -170,3 +169,6 @@ C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\ob
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.pdb
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.MenuFKCategoryIdCorrected.resources
 C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.PhotoAddedToRoom.resources
+C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.CustomerIdAddedToBooking.resources
+C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Migrations.CustDisplayNameChaneInBooking.resources
+C:\Users\ASUS\Desktop\asp.net-final-project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.csprojAssemblyReference.cache

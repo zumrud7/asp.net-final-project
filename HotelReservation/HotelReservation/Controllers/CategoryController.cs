@@ -16,21 +16,38 @@ namespace HotelReservation.Controllers
         {
             _context = new HotelReservationContext();
         }
+
+
+        //Index page view
         public ActionResult Index()
         {
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
+
             var list = _context.Categories.OrderByDescending(c => c.Id).ToList();
             return View(list);
         }
 
+
+        //Create page view
         public ActionResult Create()
         {
             ViewBag.Categories = _context.Categories.ToList();
             return View();
         }
 
+
+
+        //Creat page submit form
         [HttpPost]
         public ActionResult Create(Category ctg)
         {
+
+            //Create category if data is valid
 
             if (ModelState.IsValid)
             {
@@ -44,6 +61,8 @@ namespace HotelReservation.Controllers
             return View(ctg);
         }
 
+
+        //Edit page view
         public ActionResult Edit(int id)
         {
             Category ctg = _context.Categories.Find(id);
@@ -57,9 +76,14 @@ namespace HotelReservation.Controllers
             return View(ctg);
         }
 
+
+
+        //Edit page submit form
         [HttpPost]
         public ActionResult Edit(Category ctg)
         {
+
+            //Update category if data is valid
 
             if (ModelState.IsValid)
             {
@@ -74,6 +98,8 @@ namespace HotelReservation.Controllers
             return View(ctg);
         }
 
+
+        //Delete selected category
         public ActionResult Delete(int id)
         {
             Category ctg = _context.Categories.Find(id);

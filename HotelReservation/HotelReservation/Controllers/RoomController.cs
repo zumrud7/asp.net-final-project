@@ -19,30 +19,46 @@ namespace HotelReservation.Controllers
         {
             _context = new HotelReservationContext();
         }
+
+
+        //Index page view
         public ActionResult Index()
         {
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
             var list = _context.Rooms.Include("BedType").OrderByDescending(r => r.Id).ToList();
             return View(list);
         }
 
+
+        //Create page view
         public ActionResult Create()
         {
             ViewBag.BedTypes = _context.BedTypes.OrderBy(b => b.Name).ToList();
             return View();
         }
 
+
+        //Create page submit form
         [HttpPost]
         public ActionResult Create(Room room)
         {
+
+            // File size verification
             if (room.File.ContentLength / 1024 / 1024 > 1)
             {
                 ModelState.AddModelError("File", "Uploaded file size cannot exceed 1MB.");
             }
 
+
+            //Create room if data is valid
             if (ModelState.IsValid)
             {
                 room.Photo = FileManager.Upload(room.File);
-
+                
                 _context.Rooms.Add(room);
                 _context.SaveChanges();
 
@@ -55,6 +71,8 @@ namespace HotelReservation.Controllers
             return View(room);
         }
 
+
+        //Edit page view
         public ActionResult Edit(int id)
         {
             Room room = _context.Rooms.Find(id);
@@ -69,9 +87,13 @@ namespace HotelReservation.Controllers
             return View(room);
         }
 
+
+        //Edit page submit form
         [HttpPost]
         public ActionResult Edit(Room room)
         {
+
+            //Verify if uploaded file is valid
             if(room.File != null)
             {
                 if(room.File.ContentLength/1024/1024 > 1)
@@ -80,6 +102,8 @@ namespace HotelReservation.Controllers
                 }
             }
 
+
+            //Update room if data is valid
             if (ModelState.IsValid)
             {
                 if(room.File != null)
@@ -99,6 +123,8 @@ namespace HotelReservation.Controllers
             return View(room);
         }
 
+
+        //Delete selected room
         public ActionResult Delete(int id)
         {
             Room room = _context.Rooms.Find(id);

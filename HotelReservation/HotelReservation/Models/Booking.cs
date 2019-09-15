@@ -29,6 +29,10 @@ namespace HotelReservation.Models
         public int MenuId { get; set; }
 
         public Menu Menu { get; set; }
+        [Display(Name ="Customer Name")]
+        public int CustomerId { get; set; }
+
+        public Customer Customer { get; set; }
 
         
     }

@@ -10,21 +10,15 @@ namespace HotelReservation.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
 
             return View();
         }
+
+       
     }
 }

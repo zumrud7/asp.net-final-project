@@ -1,0 +1,77 @@
+﻿@model Booking
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="page">
+    <div id="room">
+
+        <div class="header">
+            <div class="row">
+                <div class="col-9">
+                    <h1><i class="fas fa-sticky-note"></i>NEW BOOKING</h1>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="create">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.RoomId)
+                        @Html.DropDownListFor(m => m.RoomId, new SelectList(ViewBag.Rooms, "id", "number"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.RoomId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.CheckIn)
+                        @Html.TextBoxFor(m => m.CheckIn, null, new { @class = "form-control", @type = "date" })
+                        @Html.ValidationMessageFor(m => m.CheckIn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.CheckOut)
+                        @Html.TextBoxFor(m => m.CheckOut, null, new { @class = "form-control", @type = "date" })
+                        @Html.ValidationMessageFor(m => m.CheckOut, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.CustomerId)
+                        @Html.DropDownListFor(m => m.CustomerId, new SelectList(ViewBag.Customers, "id", "lastname"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.MenuId)
+                        @Html.DropDownListFor(m => m.MenuId, new SelectList(ViewBag.Menus, "id", "name"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.MenuId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.TotalPrice)
+                        @Html.TextBoxFor(m => m.TotalPrice, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.TotalPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(m => m.UserId)
+                        @Html.DropDownListFor(m => m.UserId, new SelectList(ViewBag.Users, "id", "username"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Create</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

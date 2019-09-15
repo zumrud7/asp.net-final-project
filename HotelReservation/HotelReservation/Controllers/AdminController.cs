@@ -19,18 +19,31 @@ namespace HotelReservation.Controllers
         }
         public ActionResult Index()
         {
+            //Ban access to page is user is not logged in 
+            if (Session["UserLogin"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var list = _context.Users.Include("Group").OrderByDescending(u => u.Id).ToList();
             return View(list);
         }
+
+
+        //Create Page View
         public ActionResult Create()
         {
             ViewBag.Groups = _context.Groups.ToList();
             return View();
         }
 
+
+
+        //Create Page Submit form
         [HttpPost]
         public ActionResult Create(User usr)
         {
+            //Submit form if data is valid
             if (ModelState.IsValid)
             {
                 _context.Users.Add(usr);
@@ -39,10 +52,12 @@ namespace HotelReservation.Controllers
             }
 
 
+            
             return View(usr);
         }
 
         
+        //Edit Page View
         public ActionResult Edit(int id)
         {
             User usr = _context.Users.Find(id);
@@ -55,9 +70,13 @@ namespace HotelReservation.Controllers
             return View(usr);
         }
 
+
+        //Edit page submit form
         [HttpPost]
         public ActionResult Edit(User usr)
         {
+
+            //Update form if data valid
             if (ModelState.IsValid)
             {
                 _context.Entry(usr).State = System.Data.Entity.EntityState.Modified;
@@ -69,6 +88,8 @@ namespace HotelReservation.Controllers
             return View(usr);
         }
 
+
+        //Delete selected user
         public ActionResult Delete(int id)
         {
             User usr = _context.Users.Find(id);
